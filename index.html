@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+    <header>
+        <button onclick="expandAll()">Expand All</button>
+        <button onclick="collapseAll()">Collapse All</button>
+    </header>
   <head>
     <meta charset="utf-8">
 
@@ -232,6 +236,35 @@ function click(d) {
 	d._children = null;
   }
   update(d);
+}
+
+function expand(d){
+    var children = (d.children) ? d.children : d._children;
+    if (d._children) {
+        d.children = d._children;
+        d._children = null;
+    }
+    if(children)
+      children.forEach(expand);
+}
+
+function collapse(d) {
+  if (d.children) {
+    d._children = d.children;
+    d._children.forEach(collapse);
+    d.children = null;
+  }
+}
+
+function expandAll(){
+    expand(root);
+    update(root);
+}
+
+function collapseAll(){
+    root.children.forEach(collapse);
+    collapse(root);
+    update(root);
 }
 
 </script>
