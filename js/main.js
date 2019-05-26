@@ -2,47 +2,56 @@ var treeData = [
   {
     "name": "Srini",
     "parent": "null",
+    "wiki": "Srini is a homo sapien resident of Planet earth with a propensity to make cheesy websites.",
     "male": "yes",
     "children": [
       {
         "name": "Padma",
+        "wiki": "Padma won the state hurdles championships in India. She also gave birth to Srini in her spare time and somehow managed to retain her sanity.",
         "parent": "Srini",
         "children": [
           {
             "name": "Srimathi",
-            "parent": "Padma"
+            "parent": "Padma",
+            "wiki": "Srimathi was a professor of Mathematics in Ennore, Chennai. She was also a bomb nana."
           },
           {
             "name": "Ranga",
             "parent": "Padma",
-            "male": "yes"
+            "male": "yes",
+            "wiki": "Ranga was a businessman that dealt in agricultural products back in 1950s India. He owned one of the original Jawa motorcycles and was a loving granpa."
           }
         ]
       },
       {
         "name": "Muthu",
         "parent": "Srini",
+        "wiki": "Muthu is a badass banker that built a reputation for remembering bank balances from memory to the third decimal point. A huge foodie, he loves cooking on the weekends.",
         "male": "yes",
         "children": [
           {
             "name": "Ramaswamy",
             "male": "yes",
+            "wiki": "Ramaswamy worked for the Indian Railways for 50 full years, never having missed a day. He loves visiting temples all over India with his wife Ramamani.",
             "parent": "Muthu",
             "children": [
               {
                 "name": "Aaramuda Iyengar",
                 "parent": "Ramaswamy",
-                "male": "yes"
+                "male": "yes",
+                "wiki": "Further Research needed."
               },
               {
                 "name": "Ramaswamy Mom",
-                "parent": "Ramaswamy"
+                "parent": "Ramaswamy",
+                "wiki": "Further research needed."
               }
             ]
           },
           {
             "name": "Ramamani",
-            "parent": "Muthu"
+            "parent": "Muthu",
+            "wiki": "The matriarch of the family, she raised two sons and two daughters. She is a phenomenal chef and loves baking Badushahs."
           }
         ]
       }
@@ -192,7 +201,7 @@ function click(d) {
     d._children = null;
   }
 
-  wiki.innerHTML = '<img src="images/' + d.name + '.jpg"><p>A little something about ' + d.name + '</p>'
+  wiki.innerHTML = '<img src="images/' + d.name + '.jpg"><p>' + d.wiki + '</p>'
 
   update(d);
 }
