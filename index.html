@@ -42,6 +42,7 @@ var treeData = [
   {
     "name": "Srini",
     "parent": "null",
+    "male": "yes",
     "children": [
       {
         "name": "Padma",
@@ -53,21 +54,25 @@ var treeData = [
           },
           {
             "name": "Ranga",
-            "parent": "Padma"
+            "parent": "Padma",
+            "male": "yes"
           }
         ]
       },
       {
         "name": "Muthu",
         "parent": "Srini",
+        "male": "yes",
         "children": [
           {
             "name": "Ramaswamy",
+            "male": "yes",
             "parent": "Muthu",
             "children": [
               {
                 "name": "Aaramuda Iyengar",
-                "parent": "Ramaswamy"
+                "parent": "Ramaswamy",
+                "male": "yes"
               },
               {
                 "name": "?",
@@ -115,6 +120,19 @@ update(root);
 
 d3.select(self.frameElement).style("height", "500px");
 
+function gender_color_fill(d) {
+    if (d._children) {
+	        return d.male ? "lightsteelblue" : "pink";
+	    }
+	    else {
+	        return "#fff";
+	    }
+}
+
+function gender_color_stroke(d) {
+    return d.male ? "#036" : "mediumvioletred";
+}
+
 function update(source) {
 
   // Compute the new tree layout.
@@ -136,7 +154,8 @@ function update(source) {
 
   nodeEnter.append("circle")
 	  .attr("r", 1e-6)
-	  .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+	  .style("fill", gender_color_fill)
+	  .style("stroke", gender_color_stroke);;
 
   nodeEnter.append("text")
 	  .attr("x", function(d) { return d.children || d._children ? -13 : 13; })
@@ -152,7 +171,8 @@ function update(source) {
 
   nodeUpdate.select("circle")
 	  .attr("r", 10)
-	  .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+	  .style("fill", gender_color_fill)
+	  .style("stroke", gender_color_stroke);
 
   nodeUpdate.select("text")
 	  .style("fill-opacity", 1);
