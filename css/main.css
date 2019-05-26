@@ -1,0 +1,33 @@
+.node {
+    cursor: pointer;
+}
+
+.node circle {
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 3px;
+}
+
+.node text {
+  font: 12px sans-serif;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 2px;
+}
+
+div {
+    float:center;
+    height: 50%;
+    width: 90%;
+    margin: 5px;
+    padding: 20px;
+    //border: 1px solid black;
+}
+
+#wiki img {
+    height: 10%;
+    width: 10%;
+}
