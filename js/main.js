@@ -13,13 +13,39 @@ var treeData = [
           {
             "name": "Srimathi",
             "parent": "Padma",
-            "wiki": "Srimathi was a professor of Mathematics in Ennore, Chennai. She was also a bomb nana."
+            "wiki": "Srimathi was a professor of Mathematics in Ennore, Chennai. She was also a bomb nana.",
+            "children": [
+              {
+                "name": "Veeraraghavachariar",
+                "parent": "Srimathi",
+                "male": "yes",
+                "wiki": "More research needed."
+              },
+              {
+                "name": "Rajalakshmi",
+                "parent": "Srimathi",
+                "wiki": "More research needed."
+              }
+            ]
           },
           {
             "name": "Ranga",
             "parent": "Padma",
             "male": "yes",
-            "wiki": "Ranga was a businessman that dealt in agricultural products back in 1950s India. He owned one of the original Jawa motorcycles and was a loving granpa."
+            "wiki": "Ranga was a businessman that dealt in agricultural products back in 1950s India. He owned one of the original Jawa motorcycles and was a loving granpa.",
+            "children": [
+              {
+                "name": "Rangaswamy",
+                "parent": "Ranga",
+                "male": "yes",
+                "wiki": "More research needed."
+              },
+              {
+                "name": "Komala",
+                "parent": "Ranga",
+                "wiki": "More research needed."
+              }
+            ]
           }
         ]
       },
