@@ -19,6 +19,7 @@ var treeData = [
                 "name": "Veeraraghavachariar",
                 "parent": "Srimathi",
                 "male": "yes",
+                "deceased": "yes",
                 "wiki": "More research needed."
               },
               {
@@ -31,17 +32,20 @@ var treeData = [
           {
             "name": "Ranga",
             "parent": "Padma",
+            "deceased": "yes",
             "male": "yes",
             "wiki": "Ranga was a businessman that dealt in agricultural products back in 1950s India. He owned one of the original Jawa motorcycles and was a loving granpa.",
             "children": [
               {
                 "name": "Rangaswamy",
                 "parent": "Ranga",
+                "deceased": "yes",
                 "male": "yes",
                 "wiki": "More research needed."
               },
               {
                 "name": "Komala",
+                "deceased": "yes",
                 "parent": "Ranga",
                 "wiki": "More research needed."
               }
@@ -63,12 +67,14 @@ var treeData = [
             "children": [
               {
                 "name": "Aaramuda Iyengar",
+                "deceased": "yes",
                 "parent": "Ramaswamy",
                 "male": "yes",
                 "wiki": "Further Research needed."
               },
               {
-                "name": "Ramaswamy Mom",
+                "name": "Unknown",
+                "deceased": "yes",
                 "parent": "Ramaswamy",
                 "wiki": "Further research needed."
               }
