@@ -24,6 +24,7 @@ var treeData = [
               },
               {
                 "name": "Rajalakshmi",
+                "deceased": "yes",
                 "parent": "Srimathi",
                 "wiki": "More research needed."
               }
@@ -134,6 +135,10 @@ function gender_color_stroke(d) {
     return d.male ? "#036" : "mediumvioletred";
 }
 
+function opacity_if_deceased(d) {
+    return d.deceased ? 0.5 : 1;
+}
+
 function update(source) {
 
   // Compute the new tree layout.
@@ -176,7 +181,7 @@ function update(source) {
       .style("stroke", gender_color_stroke);
 
   nodeUpdate.select("text")
-      .style("fill-opacity", 1);
+      .style("fill-opacity", opacity_if_deceased);
 
   // Transition exiting nodes to the parent's new position.
   var nodeExit = node.exit().transition()
